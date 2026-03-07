@@ -1,2 +1,2 @@
 # terraform-aws
-Infrastructure as Code with Terraform on AWS
+Terraform infrastructure deployments for AWS networking and compute environments.
