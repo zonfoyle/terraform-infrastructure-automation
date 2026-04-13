@@ -124,4 +124,3 @@ This project demonstrates the transition from manual AWS configuration and boto3
 * Use Terraform modules for better structure
 * Add `user_data` to automate web server setup
 * Deploy a multi-tier architecture (ALB + multiple EC2s)
-
