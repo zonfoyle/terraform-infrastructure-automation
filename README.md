@@ -1,20 +1,20 @@
-# 🚀 Terraform Infrastructure Automation
+# Terraform Infrastructure Automation
 
-🔗 Live App: http://44.199.208.243
+🔗 Live App: (Previously deployed — see infrastructure screenshots below)
 
-Provisioned AWS infrastructure using Terraform, including networking, security, and compute resources, and deployed a live web server accessible via public IP.
+Provisioned a complete AWS environment using Terraform, including VPC networking, routing, security groups, and EC2 compute, and deployed a publicly accessible web server.
 
 ---
 
-## 📌 Overview
+## Overview
 
 This project demonstrates Infrastructure as Code (IaC) by automating the creation of a complete AWS environment using Terraform.
 
-The system provisions a fully functional cloud architecture and deploys a web server that can be accessed from the internet.
+The system provisions a fully functional cloud architecture and deploys a web server accessible from the internet.
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 Internet
 ↓
@@ -28,6 +28,40 @@ EC2 Instance (Apache Web Server)
 
 ---
 
+## Infrastructure Screenshots
+
+These screenshots show the live AWS infrastructure provisioned using Terraform.
+
+### VPC Overview
+
+![VPC Overview](./screenshots/vpc-overview.png)
+
+### VPC Configuration
+
+![VPC Configuration](./screenshots/vpc-configuration.png)
+
+### VPC CIDR Block
+
+![VPC CIDR](./screenshots/vpc-cidr.png)
+
+### Subnet Configuration
+
+![Subnet](./screenshots/subnet-configuration.png)
+
+### Route Table Overview
+
+![Route Table](./screenshots/route-table-overview.png)
+
+### Routing Rules
+
+![Routes](./screenshots/route-table-routes.png)
+
+### Internet Gateway
+
+![Internet Gateway](./screenshots/internet-gateway.png)
+
+---
+
 ## ⚙️ Tech Stack
 
 * Terraform
@@ -37,7 +71,7 @@ EC2 Instance (Apache Web Server)
 
 ---
 
-## 🚀 Features
+## Features
 
 * Automated VPC creation with DNS support
 * Public subnet with internet access
@@ -46,10 +80,11 @@ EC2 Instance (Apache Web Server)
 * EC2 instance deployment using Terraform
 * Web server installation and configuration
 * Terraform outputs for public IP and DNS
+* Fully reproducible infrastructure using Terraform
 
 ---
 
-## 📊 Outputs
+## Outputs
 
 After running `terraform apply`, Terraform provides:
 
@@ -70,13 +105,13 @@ ec2_public_dns = "ec2-44-199-208-243.compute-1.amazonaws.com"
 ### 1. SSH into the instance
 
 ```bash
-ssh -i ~/.ssh/ec2-practice-key.pem ec2-user@44.199.208.243
+ssh -i ~/.ssh/ec2-practice-key.pem ec2-user@<EC2_PUBLIC_IP>
 ```
 
 ### 2. Open in browser
 
 ```
-http://44.199.208.243
+http://<EC2_PUBLIC_IP>
 ```
 
 ### Expected Output
@@ -95,12 +130,13 @@ terraform-infrastructure-automation/
 ├── main.tf
 ├── outputs.tf
 ├── .gitignore
-└── README.md
+├── README.md
+└── screenshots/
 ```
 
 ---
 
-## 🧠 Key Concepts Demonstrated
+## Key Concepts Demonstrated
 
 * Infrastructure as Code (IaC)
 * Terraform state management
@@ -112,16 +148,17 @@ terraform-infrastructure-automation/
 
 ---
 
-## 🎯 Project Goal
+## Project Goal
 
-This project demonstrates the transition from manual AWS configuration and boto3 automation to production-style infrastructure management using Terraform.
+This project demonstrates building and managing cloud infrastructure using Terraform, transitioning from manual AWS configuration to scalable, repeatable infrastructure deployment.
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 * Add variables (`variables.tf`) for reusable configuration
 * Use Terraform modules for better structure
 * Add `user_data` to automate web server setup
 * Deploy a multi-tier architecture (ALB + multiple EC2s)
+
 
